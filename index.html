@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="sv">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>One-page Site with Popups</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
+    <script src="scripts.js" defer></script>
+</head>
+<body>
+    <header class="header">
+        <a href="index.html"><img src="https://uploads.staticjw.com/au/aurorawedding/green-violett-white.png" alt="Logo"></a>
+        <div class="language-switcher">
+            <button onclick="switchLanguage('sv')">SV</button>
+            <button onclick="switchLanguage('en')">EN</button>
+        </div>
+    </header>
+    <nav class="nav">
+        <button class="nav-btn" data-img="https://uploads.staticjw.com/ta/tackochlovsalen/kenneth003.jpg" data-sv="BRÖLLOPET" data-en="THE WEDDING" onclick="togglePopup('content1')">BRÖLLOPET</button>
+        <button class="nav-btn" data-img="https://uploads.staticjw.com/au/aurorawedding/view002.jpg" data-sv="BOENDE" data-en="ACCOMMODATION" onclick="togglePopup('content2')">BOENDE</button>
+        <button class="nav-btn" data-img="https://uploads.staticjw.com/au/aurorawedding/food.jpg" data-sv="PROGRAM" data-en="PROGRAM" onclick="togglePopup('content3')">PROGRAM</button>
+        <button class="nav-btn" data-img="https://uploads.staticjw.com/au/aurorawedding/view003.jpg" data-sv="GALLERI" data-en="GALLERY" onclick="togglePopup('content4')">GALLERI</button>
+    </nav>
+    <div class="image-display" id="imageDisplay"></div>
+    <div id="content1" class="popup-content">
+        <div class="column-container">
+            <div class="image-container">
+                <img src="https://uploads.staticjw.com/ta/tackochlovsalen/kenneth003.jpg" alt="Bröllopet">
+            </div>
+            <div class="text-container">
+                <h3 data-sv="Bröllopet" data-en="The Wedding">Bröllopet</h3>
+                <p data-sv="Välkomna till vårt bröllop! Vi ser fram emot att fira denna speciella dag med er." data-en="Welcome to our wedding! We look forward to celebrating this special day with you.">Välkomna till vårt bröllop! Vi ser fram emot att fira denna speciella dag med er.</p>
+                <h4 data-sv="Datum och Tid" data-en="Date and Time">Datum och Tid</h4>
+                <p data-sv="Vigseln äger rum den 19 april 2025. Ceremonin börjar kl. 14:00. Det kommer serveras brunch fram till 12:00." data-en="The wedding ceremony will take place on April 19, 2025. The ceremony starts at 14:00. Brunch will be served until 12:00.">Vigseln äger rum den 19 april 2025. Ceremonin börjar kl. 14:00. Det kommer serveras brunch fram till 12:00.</p>
+                <h4 data-sv="Plats" data-en="Location">Plats</h4>
+                <p data-sv="Bröllopet äger rum på Lapland View Lodge." data-en="The wedding will be held at Lapland View Lodge.">Bröllopet äger rum på <a href="https://explorethenorth.se/our-lodges/lapland-view-lodge" target="_blank">Lapland View Lodge</a>.</p>
+                <h4 data-sv="Klädsel" data-en="Dress Code">Klädsel</h4>
+                <p data-sv="Klädkod: Magi. Kom klädda i något magiskt och förtrollande!" data-en="Dress code: Magic. Come dressed in something magical and enchanting!">Klädkod: Magi. Kom klädda i något magiskt och förtrollande!</p>
+                <h4 data-sv="Presenter" data-en="Gifts">Presenter</h4>
+                <p data-sv="Vi önskar oss inga bröllopspresenter, men bidrag till vår bröllopsresa uppskattas." data-en="We do not wish for wedding gifts, but contributions to our honeymoon are appreciated.">Vi önskar oss inga bröllopspresenter, men bidrag till vår bröllopsresa uppskattas.</p>
+                <h4 data-sv="Kontaktinformation" data-en="Contact Information">Kontaktinformation</h4>
+                <p data-sv="Vid frågor, vänligen kontakta oss på [telefonnummer] eller [e-postadress]." data-en="If you have any questions, please contact us at [phone number] or [email address].">Vid frågor, vänligen kontakta oss på [telefonnummer] eller [e-postadress].</p>
+            </div>
+        </div>
+    </div>
+    <div id="content2" class="popup-content">
+        <div class="column-container">
+            <div class="text-container">
+                <h3 style="text-align: center;" data-sv="Boende" data-en="Accommodation">Boende</h3>
+                <p data-sv="Vi bjuder alla gäster på boendet från 19 till 20 april på Lapland View Lodge. Njut av den fantastiska naturen och den magiska atmosfären." data-en="We invite all guests to stay from April 19 to 20 at Lapland View Lodge. Enjoy the amazing nature and magical atmosphere.">Vi bjuder alla gäster på boendet från 19 till 20 april på <a href="https://explorethenorth.se/our-lodges/lapland-view-lodge" target="_blank">Lapland View Lodge</a>. Njut av den fantastiska naturen och den magiska atmosfären.</p>
+                <p data-sv="Det finns möjlighet att boka fler nätter om ni önskar förlänga vistelsen. Besök <a href='https://explorethenorth.se/our-lodges/lapland-view-lodge' target='_blank'>Lapland View Lodge</a> för att boka extra nätter." data-en="You can book additional nights if you wish to extend your stay. Visit <a href='https://explorethenorth.se/our-lodges/lapland-view-lodge' target='_blank'>Lapland View Lodge</a> to book extra nights.">Det finns möjlighet att boka fler nätter om ni önskar förlänga vistelsen. Besök <a href="https://explorethenorth.se/our-lodges/lapland-view-lodge" target="_blank">Lapland View Lodge</a> för att boka extra nätter.</p>
+                <p data-sv="Den smidigaste resvägen är att flyga inrikes från Arlanda till Luleå, där transport kommer att ordnas. Alternativt kan ni ta tåget till Luleå eller flyga utrikes till Rovaniemi, Finland." data-en="The most convenient way to travel is to fly domestically from Arlanda to Luleå, where transportation will be arranged. Alternatively, you can take a train to Luleå or fly internationally to Rovaniemi, Finland.">Den smidigaste resvägen är att flyga inrikes från Arlanda till Luleå, där transport kommer att ordnas. Alternativt kan ni ta tåget till Luleå eller flyga utrikes till Rovaniemi, Finland.</p>
+            </div>
+            <div class="image-carousel">
+                <img class="carousel-image" src="https://uploads.staticjw.com/ta/tackochlovsalen/kenneth003.jpg" alt="Lapland View Lodge" onclick="openSlideshow(0)">
+                <img class="carousel-image" src="https://uploads.staticjw.com/ta/tackochlovsalen/img-0625.jpg" alt="Lapland View Lodge" style="display:none;" onclick="openSlideshow(1)">
+                <img class="carousel-image" src="https://uploads.staticjw.com/au/aurorawedding/food.jpg" alt="Lapland View Lodge" style="display:none;" onclick="openSlideshow(2)">
+                <img class="carousel-image" src="https://uploads.staticjw.com/au/aurorawedding/view002.jpg" alt="Lapland View Lodge" style="display:none;" onclick="openSlideshow(3)">
+                <img class="carousel-image" src="https://uploads.staticjw.com/au/aurorawedding/001understor.jpg" alt="Lapland View Lodge" style="display:none;" onclick="openSlideshow(4)">
+                <img class="carousel-image" src="https://uploads.staticjw.com/au/aurorawedding/view003.jpg" alt="Lapland View Lodge" style="display:none;" onclick="openSlideshow(5)">
+                <button class="prev" onclick="changeImage(-1)">&#10094;</button>
+                <button class="next" onclick="changeImage(1)">&#10095;</button>
+            </div>
+        </div>
+    </div>
+    <div id="content3" class="popup-content">
+        <div class="column-container">
+            <div class="text-container">
+                <h3 style="text-align: center;" data-sv="Program" data-en="Program">Program</h3>
+                <ul data-sv="<li>12:00 - Brunch</li><li>14:00 - Ceremoni</li><li>15:00 - Fotografering</li><li>17:00 - Mottagning</li><li>19:00 - Middag</li><li>21:00 - Fest</li>" data-en="<li>12:00 - Brunch</li><li>14:00 - Ceremony</li><li>15:00 - Photography</li><li>17:00 - Reception</li><li>19:00 - Dinner</li><li>21:00 - Party</li>">
+                    <li>12:00 - Brunch</li>
+                    <li>14:00 - Ceremoni</li>
+                    <li>15:00 - Fotografering</li>
+                    <li>17:00 - Mottagning</li>
+                    <li>19:00 - Middag</li>
+                    <li>21:00 - Fest</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div id="content4" class="popup-content gallery-content">
+        <div class="gallery">
+            <iframe src="https://drive.google.com/embeddedfolderview?id=1mli8XB9PvWJzQsG72psD3oKM1vZX9f0B#grid" style="width: 920px; height:300px; border-right:10%;"></iframe>
+        </div>
+    </div>
+    <div id="imageModal" class="modal">
+        <span class="close cursor" onclick="closeImage()">&times;</span>
+        <div class="modal-content" id="modalSlides"></div>
+        <a class="prev" onclick="slideImage(-1)">&#10094;</a>
+        <a class="next" onclick="slideImage(1)">&#10095;</a>
+    </div>
+</body>
+</html>
