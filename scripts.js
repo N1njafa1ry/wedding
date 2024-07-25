@@ -85,7 +85,7 @@ const galleryImages = [
     'https://uploads.staticjw.com/au/aurorawedding/food.jpg',
     'https://uploads.staticjw.com/au/aurorawedding/view002.jpg',
     'https://uploads.staticjw.com/au/aurorawedding/001understor.jpg',
-    'https://uploads.staticjw.com/au/aurorawedding/view003.jpg'
+    'https://lh3.googleusercontent.com/pw/AP1GczPcxfslL9AxI8xAEkvT7l7G_vV7qDED-uFuz64MLjWsdJyKG8lYCMDq6m4Um4efuBYLXkPO_zRhlr7cTdJzwzzl1TQAs3mherw08w_BX7d7Wu11vIo8=w2400'
 ];
 let currentSlide = 0;
 

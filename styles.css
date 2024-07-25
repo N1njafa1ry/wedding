@@ -18,7 +18,7 @@ html, body {
     height: 100%;
     width: 100%;
     font-family: 'Playfair Display', serif;
-    background: url(https://uploads.staticjw.com/au/aurorawedding/inbjudan_test.jpg) no-repeat center center/cover;
+    background: url(https://uploads.staticjw.com/au/aurorawedding/b9_011.jpg) no-repeat center center/cover;
     overflow-x: hidden;
 }
 
@@ -50,8 +50,8 @@ html, body {
 
 .language-switcher button {
     background: transparent;
-    border: 1px solid white;
-    color: white;
+    border: 1px solid #82bcaf;
+    color: #82bcaf;
     padding: 5px 10px;
     margin-left: 10px;
     cursor: pointer;
@@ -113,8 +113,8 @@ html, body {
 
 .content-inner {
     display: flex;
-    flex-direction: row;
-    align-items: flex-start;
+    flex-direction: column;
+    align-items: center;
     justify-content: space-between;
     gap: 20px;
 }
@@ -132,12 +132,12 @@ html, body {
 }
 
 .text-container {
-    flex: 2;
+    width: 100%;
     padding: 20px;
     color: var(--text-color);
-    background: rgb(239, 235, 220);
+    background: rgba(239, 235, 220, 0);
     border-radius: 0; /* Gör hörnen kantiga */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.0);
 }
 
 .text-container h3 {
@@ -170,15 +170,58 @@ html, body {
 
 .details {
     display: flex;
-    flex-direction: column;
-    gap: 15px;
+    justify-content: space-around;
+    width: 100%;
+    margin-top: 20px;
 }
 
 .detail-item {
-    border-bottom: 1px solid var(--background-overlay);
-    padding-bottom: 10px;
-    margin-bottom: 10px;
+    width: 23%; /* Adjust as needed to fit 4 items in a row with space around */
+    text-align: center;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.0);
+    color: #42403696; /* Ensure text is readable over background images */
+    position: relative; /* Ensure positioning for child elements */
+    background-color: rgba(0, 0, 0, 0.0); /* Optional background color for better visibility */
 }
+
+/* Specific border image for the first detail item */
+.detail-item:nth-child(1) {
+    border: 5px solid transparent; /* Set the border width */
+    border-image-source: url('https://uploads.staticjw.com/au/aurorawedding/bgleaf001.png');
+    border-image-slice: 30 fill; /* Adjust the slice value based on the image */
+    border-image-width: 20px;
+    border-image-outset: 5;
+    border-image-repeat: round;
+}
+
+.detail-item:nth-child(2) {
+    border: 5px solid transparent; /* Set the border width */
+    border-image-source: url('https://uploads.staticjw.com/au/aurorawedding/bgleaf002.png');
+    border-image-slice: 30 fill; /* Adjust the slice value based on the image */
+    border-image-width: 20px;
+    border-image-outset: 5;
+    border-image-repeat: round;
+}
+
+.detail-item:nth-child(3) {
+    border: 5px solid transparent; /* Set the border width */
+    border-image-source: url('https://uploads.staticjw.com/au/aurorawedding/bgleaf004.png');
+    border-image-slice: 30 fill; /* Adjust the slice value based on the image */
+    border-image-width: 20px;
+    border-image-outset: 5;
+    border-image-repeat: round;
+}
+
+.detail-item:nth-child(4) {
+    background-image: url('path/to/your/image4.jpg');
+}
+
+.detail-item:nth-child(5) {
+    background-image: url('path/to/your/image5.jpg');
+}
+
 
 .gallery-content {
     padding: 20px;
@@ -312,4 +355,81 @@ html, body {
     .gallery {
         grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
     }
+
+    .section {
+        flex-direction: column;
+    }
+}
+
+/* New styles for full-width sections */
+.section {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    margin: 20px 0;
+    padding: 20px;
+    background-color: rgba(255, 255, 255, 0);
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.0);
+}
+
+.section:nth-child(odd) .text-container {
+    order: 1;
+}
+
+.section:nth-child(odd) .image-container {
+    order: 2;
+}
+
+.section:nth-child(even) .text-container {
+    order: 2;
+}
+
+.section:nth-child(even) .image-container {
+    order: 1;
+}
+
+.section .text-container {
+    flex: 1;
+    padding: 20px;
+    color: var(--text-color);
+    font-family: 'Roboto', sans-serif;
+    background-size: cover;
+    background-position: center;
+    border-radius: 10px;
+}
+
+.section .image-container {
+    flex: 1;
+    text-align: center;
+}
+
+.section .image-container img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.0);
+    transition: transform 0.3s ease-in-out;
+}
+
+.section .image-container img:hover {
+    transform: scale(1.02);
+}
+
+/* Background images for each text-container */
+.section:nth-child(1) .text-container {
+    background-image: url('https://uploads.staticjw.com/au/aurorawedding/bgleaf006.png');
+}
+
+.section:nth-child(2) .text-container {
+    background-image: url('https://uploads.staticjw.com/au/aurorawedding/bgleaf006.png');
+}
+
+.section:nth-child(3) .text-container {
+    background-image: url('https://example.com/image3.jpg');
+}
+
+.section:nth-child(4) .text-container {
+    background-image: url('https://example.com/image4.jpg');
 }
