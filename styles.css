@@ -97,13 +97,12 @@ html, body {
 .popup-content {
     display: none;
     padding: 20px;
-    background-color: var(--background-overlay);
-    border: 1px solid var(--primary-color);
+    border: 0px solid var(--primary-color);
     margin-bottom: 10px;
     opacity: 0;
     transform: translateY(-100%);
     border-radius: 0; /* Gör hörnen kantiga */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.0);
 }
 
 .popup-content.active {
@@ -123,8 +122,8 @@ html, body {
 .image-container img {
     max-width: 100%;
     height: auto;
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 0; /* Gör hörnen kantiga */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.0);
     transition: transform 0.3s ease-in-out;
 }
 
@@ -136,8 +135,8 @@ html, body {
     flex: 2;
     padding: 20px;
     color: var(--text-color);
-    background: rgba(255, 255, 255, 0.9);
-    border-radius: 10px;
+    background: rgb(239, 235, 220);
+    border-radius: 0; /* Gör hörnen kantiga */
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
