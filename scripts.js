@@ -127,3 +127,4 @@ function changeImage(n) {
 function openSlideshow(index) {
     showImage(galleryImages, index);
 }
+
