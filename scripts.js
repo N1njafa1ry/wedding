@@ -44,7 +44,7 @@ function showImage(srcArray, index = 1) {
     });
 
     modal.style.display = "block";
-    slideIndex = index + 1; // Set current slide index to the clicked image
+    slideIndex = index; // Set current slide index to the clicked image
     showSlide(slideIndex); // Display the initial image
 }
 
@@ -80,12 +80,7 @@ function switchLanguage(language) {
 const imageDisplay = document.getElementById('imageDisplay');
 let slideInterval;
 const galleryImages = [
-    'https://uploads.staticjw.com/ta/tackochlovsalen/kenneth003.jpg',
-    'https://uploads.staticjw.com/ta/tackochlovsalen/img-0625.jpg',
-    'https://uploads.staticjw.com/au/aurorawedding/food.jpg',
-    'https://uploads.staticjw.com/au/aurorawedding/view002.jpg',
-    'https://uploads.staticjw.com/au/aurorawedding/001understor.jpg',
-    'https://uploads.staticjw.com/au/aurorawedding/view003.jpg'
+    'https://uploads.staticjw.com/au/aurorawedding/rikardoalva001.png',
 ];
 let currentSlide = 0;
 
@@ -93,7 +88,7 @@ function startSlideshow() {
     slideInterval = setInterval(() => {
         currentSlide = (currentSlide + 1) % galleryImages.length;
         imageDisplay.style.backgroundImage = `url(${galleryImages[currentSlide]})`;
-    }, 3000); // Byter bild var tredje sekund
+    }, 1000); // Byter bild var tredje sekund
 }
 
 function stopSlideshow() {
@@ -127,4 +122,3 @@ function changeImage(n) {
 function openSlideshow(index) {
     showImage(galleryImages, index);
 }
-
