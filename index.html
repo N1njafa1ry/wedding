@@ -9,7 +9,6 @@
         html {
             scrollbar-width: none; /* För Firefox */
             -ms-overflow-style: none;  /* För Internet Explorer och Edge */
-            overflow-x: hidden; /* Förhindra horisontell scrollning */
         }
 
         body {
@@ -22,9 +21,8 @@
             flex-direction: column;
             align-items: center;
             justify-content: flex-start;
-            overflow-y: auto; /* Gör det möjligt att scrolla vertikalt */
-            overflow-x: hidden; /* Förhindra horisontell scrollning */
-            -webkit-overflow-scrolling: touch; /* För mjuk scrollning på iOS */
+            overflow: -moz-scrollbars-none; /* För äldre Firefox */
+            -webkit-overflow-scrolling: touch; /* För att behålla mjuk scrollning på iOS */
         }
 
         /* Dölj scrollbaren för WebKit-baserade webbläsare (Chrome, Safari) */
@@ -33,26 +31,24 @@
         }
 
         header {
-            width: 100%;
+            width: 90%;
             height: 50vh; /* Sätt höjden till 50% av viewportens höjd */
             background-image: url('https://uploads.staticjw.com/au/aurorawedding/green-violett-white.png');
-            background-size: cover; /* Ändra till cover för att täcka hela headern */
+            background-size: contain;
             background-position: center;
             background-repeat: no-repeat;
-            margin: 0; /* Ta bort negativa marginaler */
+            margin-top: -0%; /* Justera marginalerna om nödvändigt */
+            margin-bottom: -0%;
         }
-
         .content {
             width: 100%; /* Gör så att videon sträcker sig över hela bredden */
             margin: 20px 0;
         }
-
         .content video {
             width: 100%;
             height: auto;
             border-radius: 0; /* Ta bort rundade hörn för att matcha fullbredd */
         }
-
         .text-with-image {
             display: flex;
             flex-direction: column;
@@ -61,14 +57,12 @@
             max-width: 800px;
             width: 100%;
         }
-
         .text-with-image img {
             max-width: 100%;
             height: auto;
             border-radius: 10px;
             margin-top: 20px;
         }
-
         .contact-form {
             background-color: #fff;
             padding: 20px;
@@ -77,7 +71,6 @@
             max-width: 500px;
             width: 100%;
         }
-
         .contact-form input, .contact-form textarea {
             width: 100%;
             padding: 10px;
@@ -85,7 +78,6 @@
             border: 1px solid #ccc;
             border-radius: 5px;
         }
-
         .contact-form button {
             padding: 10px 20px;
             border: none;
@@ -103,7 +95,7 @@
 </header>
 
 <div class="content">
-    <video controls autoplay loop muted>
+    <video controls>
         <source src="WEDDINGVIDEO.mp4" type="video/mp4">
         Din webbläsare stöder inte videouppspelning.
     </video>
