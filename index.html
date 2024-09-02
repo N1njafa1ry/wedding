@@ -57,12 +57,22 @@
             height: auto;
             max-width: 80%; /* Se till att bilden inte överskrider sidans bredd */
         }
+
+        .text-section {
+            margin: 40px 20px; /* 40px övre/nedre marginal, 20px höger/vänster marginal */
+            max-width: 800px;
+            width: 100%;
+            background-color: rgba(255, 255, 255, 0.8); /* Lägg till bakgrund för läsbarhet */
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+        }
         
         .text-with-image {
             display: flex;
             flex-direction: column;
             align-items: center;
-            margin: 40px 0;
+            margin: 40px 20px; /* Lägg till marginaler på båda sidor */
             max-width: 800px;
             width: 100%;
             padding: 0 20px;
@@ -112,7 +122,7 @@
             }
 
             .text-with-image {
-                margin: 20px 0;
+                margin: 20px 10px;
             }
 
             .contact-form {
