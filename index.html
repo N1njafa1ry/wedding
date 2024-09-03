@@ -85,17 +85,28 @@
             margin-top: 20px;
         }
 
-        .contact-form {
-            background-color: #fff;
+        .osa-form {
+            background-color: rgba(255, 255, 255, 0.8);
             padding: 20px;
             border-radius: 10px;
             box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
             max-width: 500px;
             width: 100%;
-            box-sizing: border-box;
+            margin: 40px auto; /* Centerar formuläret på sidan */
         }
 
-        .contact-form input, .contact-form textarea {
+        .osa-form h2 {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .osa-form label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: bold;
+        }
+
+        .osa-form input, .osa-form select, .osa-form textarea {
             width: 100%;
             padding: 10px;
             margin: 10px 0;
@@ -104,14 +115,19 @@
             box-sizing: border-box;
         }
 
-        .contact-form button {
+        .osa-form button {
             padding: 10px 20px;
             border: none;
             border-radius: 5px;
             background-color: #4CAF50;
             color: white;
             cursor: pointer;
-            width: 100%; /* Gör knappen fullbredd på mindre skärmar */
+            width: 100%;
+            font-size: 16px;
+        }
+
+        .osa-form button:hover {
+            background-color: #45a049;
         }
 
         /* Media Queries för mobilanpassning */
@@ -125,12 +141,12 @@
                 margin: 20px 10px;
             }
 
-            .contact-form {
+            .osa-form {
                 padding: 15px;
                 margin: 0 10px;
             }
 
-            .contact-form button {
+            .osa-form button {
                 width: 100%;
                 padding: 10px;
             }
@@ -142,7 +158,7 @@
                 max-width: 80%; /* Anpassa headerbilden till fullbredd på mindre skärmar */
             }
 
-            .contact-form {
+            .osa-form {
                 padding: 10px;
             }
         }
@@ -192,16 +208,54 @@
     <img src="https://uploads.staticjw.com/au/aurorawedding/familjenjarn001.jpeg" alt="Familjebild">
 </div>
 
-<!-- Kontaktformulär -->
-<div class="contact-form">
-    <h2>Kontakta Oss</h2>
-    <form action="din-form-action-url-här" method="POST">
-        <input type="text" name="name" placeholder="Ditt namn" required>
-        <input type="email" name="email" placeholder="Din e-post" required>
-        <textarea name="message" placeholder="Ditt meddelande" rows="5" required></textarea>
-        <button type="submit">Skicka</button>
+<!-- OSA-formulär -->
+<div class="osa-form">
+    <h2>OSA SENAST 10 DECEMBER</h2>
+    <form id="osa-form">
+        <input type="text" name="from_name" placeholder="Ditt namn" required>
+        <input type="email" name="reply_to" placeholder="Din e-post" required>
+        
+        <label for="number_of_guests">Hur många kommer?</label>
+        <input type="number" name="number_of_guests" id="number_of_guests" placeholder="Antal vuxna" required>
+        
+        <label for="number_of_children">Om barn, hur många barn?</label>
+        <input type="number" name="number_of_children" id="number_of_children" placeholder="Antal barn" required>
+        
+        <label for="consent">Godkänner du att synas på sociala medier?</label>
+        <select name="consent" id="consent" required>
+            <option value="Ja">Ja, det är okej</option>
+            <option value="Nej">Nej, jag vill inte synas</option>
+        </select>
+        
+        <label for="allergies">Om allergier:</label>
+        <textarea name="allergies" id="allergies" placeholder="Beskriv eventuella allergier" rows="2"></textarea>
+        
+        <label for="message">Meddelande:</label>
+        <textarea name="message" id="message" placeholder="Ditt meddelande (frivilligt)" rows="5"></textarea>
+        
+        <button type="submit">Skicka OSA</button>
     </form>
 </div>
+
+<!-- Inkludera EmailJS SDK och hantera formulärskick -->
+<script type="text/javascript" src="https://cdn.emailjs.com/sdk/3.2/email.min.js"></script>
+<script type="text/javascript">
+    (function(){
+        emailjs.init("P3zfoUy3p2Xffxh1d");
+    })();
+
+    document.getElementById('osa-form').addEventListener('submit', function(event) {
+        event.preventDefault(); // Förhindra att formuläret skickas på vanligt sätt
+
+        // Skicka formuläret med EmailJS
+        emailjs.sendForm('service_d0g1uin', 'template_d0g1uin', this)
+            .then(function() {
+                alert('Tack för din OSA! Vi ser fram emot att fira med dig.');
+            }, function(error) {
+                alert('Tyvärr kunde inte din OSA skickas. Försök igen senare.');
+            });
+    });
+</script>
 
 </body>
 </html>
