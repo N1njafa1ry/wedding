@@ -241,7 +241,7 @@
 <script type="text/javascript" src="https://cdn.emailjs.com/sdk/3.2/email.min.js"></script>
 <script type="text/javascript">
     (function(){
-        emailjs.init("P3zfoUy3p2Xffxh1d");
+        emailjs.init("rhbGop_C4hr6RMb02");
     })();
 
     document.getElementById('osa-form').addEventListener('submit', function(event) {
@@ -250,8 +250,10 @@
         // Skicka formuläret med EmailJS
         emailjs.sendForm('service_d0g1uin', 'template_d0g1uin', this)
             .then(function() {
+                console.log('Success: Email sent successfully.');
                 alert('Tack för din OSA! Vi ser fram emot att fira med dig.');
             }, function(error) {
+                console.error('Error: ', error);
                 alert('Tyvärr kunde inte din OSA skickas. Försök igen senare.');
             });
     });
