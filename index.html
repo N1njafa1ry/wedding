@@ -4,6 +4,13 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Bröllopshemsida</title>
+    <!-- Ladda EmailJS SDK -->
+    <script type="text/javascript" src="https://cdn.emailjs.com/sdk/3.2/email.min.js"></script>
+    <script type="text/javascript">
+        (function(){
+            emailjs.init("rhbGop_C4hr6RMb02"); // Din Public Key från EmailJS
+        })();
+    </script>
     <style>
         /* Dölj visuellt scrollbaren, men behåll scrollfunktionen */
         html {
@@ -237,13 +244,8 @@
     </form>
 </div>
 
-<!-- Inkludera EmailJS SDK och hantera formulärskick -->
-<script type="text/javascript" src="https://cdn.emailjs.com/sdk/3.2/email.min.js"></script>
+<!-- Hantera formulärskick med EmailJS -->
 <script type="text/javascript">
-    (function(){
-        emailjs.init("rhbGop_C4hr6RMb02");
-    })();
-
     document.getElementById('osa-form').addEventListener('submit', function(event) {
         event.preventDefault(); // Förhindra att formuläret skickas på vanligt sätt
 
