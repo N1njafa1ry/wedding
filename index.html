@@ -4,13 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Bröllopshemsida</title>
-    <!-- Ladda EmailJS SDK -->
-    <script type="text/javascript" src="https://cdn.emailjs.com/sdk/3.2/email.min.js"></script>
-    <script type="text/javascript">
-        (function(){
-            emailjs.init("rhbGop_C4hr6RMb02"); // Din Public Key från EmailJS
-        })();
-    </script>
+    <!-- Ladda EmailJS SDK asynkront -->
+    <script type="text/javascript" src="https://cdn.emailjs.com/sdk/3.2/email.min.js" async></script>
     <style>
         /* Dölj visuellt scrollbaren, men behåll scrollfunktionen */
         html {
@@ -246,18 +241,25 @@
 
 <!-- Hantera formulärskick med EmailJS -->
 <script type="text/javascript">
-    document.getElementById('osa-form').addEventListener('submit', function(event) {
-        event.preventDefault(); // Förhindra att formuläret skickas på vanligt sätt
+    document.addEventListener('DOMContentLoaded', function () {
+        document.getElementById('osa-form').addEventListener('submit', function(event) {
+            event.preventDefault(); // Förhindra att formuläret skickas på vanligt sätt
 
-        // Skicka formuläret med EmailJS
-        emailjs.sendForm('service_d0g1uin', 'template_d0g1uin', this)
-            .then(function() {
-                console.log('Success: Email sent successfully.');
-                alert('Tack för din OSA! Vi ser fram emot att fira med dig.');
-            }, function(error) {
-                console.error('Error: ', error);
+            // Kontrollera att EmailJS är laddat innan du anropar sendForm
+            if (typeof emailjs !== 'undefined') {
+                emailjs.sendForm('service_d0g1uin', 'template_d0g1uin', this)
+                    .then(function() {
+                        console.log('Success: Email sent successfully.');
+                        alert('Tack för din OSA! Vi ser fram emot att fira med dig.');
+                    }, function(error) {
+                        console.error('Error: ', error);
+                        alert('Tyvärr kunde inte din OSA skickas. Försök igen senare.');
+                    });
+            } else {
+                console.error('EmailJS SDK is not loaded');
                 alert('Tyvärr kunde inte din OSA skickas. Försök igen senare.');
-            });
+            }
+        });
     });
 </script>
 
