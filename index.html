@@ -7,7 +7,10 @@
     <style>
         body {
             font-family: Arial, sans-serif;
-            background-color: #f5f5f5;
+            background-image: url('https://uploads.staticjw.com/au/aurorawedding/b9_011.jpg');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
             margin: 0;
             padding: 0;
             color: #333;
@@ -15,6 +18,59 @@
             flex-direction: column;
             align-items: center;
             justify-content: flex-start;
+            overflow-y: auto;
+            overflow-x: hidden;
+            -webkit-overflow-scrolling: touch;
+        }
+
+        .content {
+            width: 100%;
+            margin: 0;
+        }
+
+        .content video {
+            width: 100%;
+            height: auto;
+            border-radius: 0;
+        }
+
+        header {
+            width: 100%;
+            text-align: center;
+            margin: 20px 0;
+        }
+
+        header img {
+            width: 80%;
+            height: auto;
+            max-width: 80%;
+        }
+
+        .text-section {
+            margin: 40px 20px;
+            max-width: 800px;
+            width: 100%;
+            background-color: rgba(255, 255, 255, 0.8);
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .text-with-image {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin: 40px 20px;
+            max-width: 800px;
+            width: 100%;
+            padding: 0 20px;
+        }
+
+        .text-with-image img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 0px;
+            margin-top: 20px;
         }
 
         .osa-form {
@@ -64,6 +120,48 @@
     </style>
 </head>
 <body>
+
+<div class="content">
+    <video controls autoplay loop muted playsinline>
+        <source src="WEDDINGVIDEO.mp4" type="video/mp4">
+        Din webbläsare stöder inte videouppspelning.
+    </video>
+</div>
+
+<header>
+    <img src="https://uploads.staticjw.com/au/aurorawedding/green-violett-white.png" alt="Bröllopslogotyp">
+</header>
+
+<!-- Vår Kärlekshistoria -->
+<div class="text-section">
+    <h2>Vår Kärlekshistoria</h2>
+    <p>Vi har visat varandra att magi existerar, och den 19 april 2025 är det vår tur att visa er. Vår resa tillsammans har varit fylld med kärlek, skratt och äventyr. Nu ser vi fram emot att dela denna magiska dag med våra närmaste och käraste. Välkommen att fira vår kärlek i hjärtat av Lappland, omgiven av naturens skönhet och under det dansande norrskenet.</p>
+</div>
+
+<!-- Plats och Boende -->
+<div class="text-section">
+    <h2>Plats och Boende</h2>
+    <p>Vårt bröllop kommer att äga rum på den fantastiska <a href="https://explorethenorth.se/our-lodges/lapland-view-lodge" target="_blank">Lapland View Lodge</a>, en pärla i Lappland med en spektakulär utsikt över den omgivande vildmarken.</p>
+    <p>Vi är glada att kunna erbjuda er boende mellan den 19-20 april som en del av bröllopsfirandet. För er som önskar förlänga er vistelse, erbjuder Lapland View Lodge en rabatt på 15% om ni uppger våra namn "Älva & Rikard" vid bokning.</p>
+    <h3>Så här tar ni er dit:</h3>
+    <ul>
+        <li><strong>Flyg:</strong> Flyg till antingen Luleå eller Rovaniemi i Finland.</li>
+        <li><strong>Tåg:</strong> Ta tåget till Luleå.</li>
+    </ul>
+    <p>Vi kommer att ordna upphämtning i både Luleå och Rovaniemi, så ni behöver inte oroa er för transporten till lodgen.</p>
+</div>
+
+<!-- Bröllopsprogram -->
+<div class="text-section">
+    <h2>Bröllopsprogram</h2>
+    <p>Vi arbetar för närvarande med att sätta ihop ett fantastiskt program för vår bröllopsdag. Vi kommer snart att uppdatera denna sida med detaljer, inklusive tider och aktiviteter. Håll utkik och se till att återkomma för mer information!</p>
+</div>
+
+<!-- Familjebild -->
+<div class="text-with-image">
+    <p>Detta är en beskrivning av vårt bröllop. Vi ser fram emot att fira denna dag med er alla.</p>
+    <img src="https://uploads.staticjw.com/au/aurorawedding/familjenjarn001.jpeg" alt="Familjebild">
+</div>
 
 <!-- OSA-formulär -->
 <div class="osa-form">
