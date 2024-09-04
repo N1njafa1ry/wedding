@@ -4,22 +4,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Bröllopshemsida</title>
-    <!-- Ladda EmailJS SDK asynkront -->
-    <script type="text/javascript" src="https://cdn.emailjs.com/sdk/3.2/email.min.js" async></script>
     <style>
-        /* Dölj visuellt scrollbaren, men behåll scrollfunktionen */
-        html {
-            scrollbar-width: none; /* För Firefox */
-            -ms-overflow-style: none;  /* För Internet Explorer och Edge */
-            overflow-x: hidden; /* Förhindra horisontell scrollning */
-        }
-
         body {
             font-family: Arial, sans-serif;
-            background-image: url('https://uploads.staticjw.com/au/aurorawedding/b9_011.jpg');
-            background-size: cover;
-            background-position: center;
-            background-repeat: no-repeat;
+            background-color: #f5f5f5;
             margin: 0;
             padding: 0;
             color: #333;
@@ -27,64 +15,6 @@
             flex-direction: column;
             align-items: center;
             justify-content: flex-start;
-            overflow-y: auto; /* Gör det möjligt att scrolla vertikalt */
-            overflow-x: hidden; /* Förhindra horisontell scrollning */
-            -webkit-overflow-scrolling: touch; /* För mjuk scrollning på iOS */
-        }
-
-        /* Dölj scrollbaren för WebKit-baserade webbläsare (Chrome, Safari) */
-        body::-webkit-scrollbar {
-            display: none;
-        }
-
-        .content {
-            width: 100%; /* Gör så att videon sträcker sig över hela bredden */
-            margin: 0;
-        }
-
-        .content video {
-            width: 100%;
-            height: auto;
-            border-radius: 0; /* Ta bort rundade hörn för att matcha fullbredd */
-        }
-
-        header {
-            width: 100%;
-            text-align: center;
-            margin: 20px 0;
-        }
-
-        header img {
-            width: 80%;
-            height: auto;
-            max-width: 80%; /* Se till att bilden inte överskrider sidans bredd */
-        }
-
-        .text-section {
-            margin: 40px 20px; /* 40px övre/nedre marginal, 20px höger/vänster marginal */
-            max-width: 800px;
-            width: 100%;
-            background-color: rgba(255, 255, 255, 0.8); /* Lägg till bakgrund för läsbarhet */
-            padding: 20px;
-            border-radius: 10px;
-            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
-        }
-        
-        .text-with-image {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            margin: 40px 20px; /* Lägg till marginaler på båda sidor */
-            max-width: 800px;
-            width: 100%;
-            padding: 0 20px;
-        }
-
-        .text-with-image img {
-            max-width: 100%;
-            height: auto;
-            border-radius: 0px;
-            margin-top: 20px;
         }
 
         .osa-form {
@@ -94,7 +24,7 @@
             box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
             max-width: 500px;
             width: 100%;
-            margin: 40px auto; /* Centerar formuläret på sidan */
+            margin: 40px auto;
         }
 
         .osa-form h2 {
@@ -131,137 +61,41 @@
         .osa-form button:hover {
             background-color: #45a049;
         }
-
-        /* Media Queries för mobilanpassning */
-        @media (max-width: 768px) {
-            header img {
-                width: 80%;
-                max-width: 80%; /* Anpassa headerbilden till fullbredd på mobiler */
-            }
-
-            .text-with-image {
-                margin: 20px 10px;
-            }
-
-            .osa-form {
-                padding: 15px;
-                margin: 0 10px;
-            }
-
-            .osa-form button {
-                width: 100%;
-                padding: 10px;
-            }
-        }
-
-        @media (max-width: 480px) {
-            header img {
-                width: 80%;
-                max-width: 80%; /* Anpassa headerbilden till fullbredd på mindre skärmar */
-            }
-
-            .osa-form {
-                padding: 10px;
-            }
-        }
     </style>
 </head>
 <body>
 
-<div class="content">
-    <video controls autoplay loop muted playsinline>
-        <source src="WEDDINGVIDEO.mp4" type="video/mp4">
-        Din webbläsare stöder inte videouppspelning.
-    </video>
-</div>
-
-<header>
-    <img src="https://uploads.staticjw.com/au/aurorawedding/green-violett-white.png" alt="Bröllopslogotyp">
-</header>
-
-<!-- Vår Kärlekshistoria -->
-<div class="text-section">
-    <h2>Vår Kärlekshistoria</h2>
-    <p>Vi har visat varandra att magi existerar, och den 19 april 2025 är det vår tur att visa er. Vår resa tillsammans har varit fylld med kärlek, skratt och äventyr. Nu ser vi fram emot att dela denna magiska dag med våra närmaste och käraste. Välkommen att fira vår kärlek i hjärtat av Lappland, omgiven av naturens skönhet och under det dansande norrskenet.</p>
-</div>
-
-<!-- Plats och Boende -->
-<div class="text-section">
-    <h2>Plats och Boende</h2>
-    <p>Vårt bröllop kommer att äga rum på den fantastiska <a href="https://explorethenorth.se/our-lodges/lapland-view-lodge" target="_blank">Lapland View Lodge</a>, en pärla i Lappland med en spektakulär utsikt över den omgivande vildmarken.</p>
-    <p>Vi är glada att kunna erbjuda er boende mellan den 19-20 april som en del av bröllopsfirandet. För er som önskar förlänga er vistelse, erbjuder Lapland View Lodge en rabatt på 15% om ni uppger våra namn "Älva & Rikard" vid bokning.</p>
-    <h3>Så här tar ni er dit:</h3>
-    <ul>
-        <li><strong>Flyg:</strong> Flyg till antingen Luleå eller Rovaniemi i Finland.</li>
-        <li><strong>Tåg:</strong> Ta tåget till Luleå.</li>
-    </ul>
-    <p>Vi kommer att ordna upphämtning i både Luleå och Rovaniemi, så ni behöver inte oroa er för transporten till lodgen.</p>
-</div>
-
-<!-- Bröllopsprogram -->
-<div class="text-section">
-    <h2>Bröllopsprogram</h2>
-    <p>Vi arbetar för närvarande med att sätta ihop ett fantastiskt program för vår bröllopsdag. Vi kommer snart att uppdatera denna sida med detaljer, inklusive tider och aktiviteter. Håll utkik och se till att återkomma för mer information!</p>
-</div>
-
-<!-- Familjebild -->
-<div class="text-with-image">
-    <p>Detta är en beskrivning av vårt bröllop. Vi ser fram emot att fira denna dag med er alla.</p>
-    <img src="https://uploads.staticjw.com/au/aurorawedding/familjenjarn001.jpeg" alt="Familjebild">
-</div>
-
 <!-- OSA-formulär -->
 <div class="osa-form">
     <h2>OSA SENAST 10 DECEMBER</h2>
-    <form id="osa-form">
-        <input type="text" name="from_name" placeholder="Ditt namn" required>
-        <input type="email" name="reply_to" placeholder="Din e-post" required>
-        
+    <form action="https://formspree.io/f/xldrvbnv" method="POST">
+        <label for="from_name">Ditt namn:</label>
+        <input type="text" name="from_name" id="from_name" placeholder="Ditt namn" required>
+
+        <label for="email">Din e-post:</label>
+        <input type="email" name="email" id="email" placeholder="Din e-post" required>
+
         <label for="number_of_guests">Hur många kommer?</label>
         <input type="number" name="number_of_guests" id="number_of_guests" placeholder="Antal vuxna" required>
-        
+
         <label for="number_of_children">Om barn, hur många barn?</label>
         <input type="number" name="number_of_children" id="number_of_children" placeholder="Antal barn" required>
-        
+
         <label for="consent">Godkänner du att synas på sociala medier?</label>
         <select name="consent" id="consent" required>
             <option value="Ja">Ja, det är okej</option>
             <option value="Nej">Nej, jag vill inte synas</option>
         </select>
-        
+
         <label for="allergies">Om allergier:</label>
         <textarea name="allergies" id="allergies" placeholder="Beskriv eventuella allergier" rows="2"></textarea>
-        
+
         <label for="message">Meddelande:</label>
         <textarea name="message" id="message" placeholder="Ditt meddelande (frivilligt)" rows="5"></textarea>
-        
+
         <button type="submit">Skicka OSA</button>
     </form>
 </div>
-
-<!-- Hantera formulärskick med EmailJS -->
-<script type="text/javascript">
-    document.addEventListener('DOMContentLoaded', function () {
-        document.getElementById('osa-form').addEventListener('submit', function(event) {
-            event.preventDefault(); // Förhindra att formuläret skickas på vanligt sätt
-
-            // Kontrollera att EmailJS är laddat innan du anropar sendForm
-            if (typeof emailjs !== 'undefined') {
-                emailjs.sendForm('service_d0g1uin', 'template_d0g1uin', this)
-                    .then(function() {
-                        console.log('Success: Email sent successfully.');
-                        alert('Tack för din OSA! Vi ser fram emot att fira med dig.');
-                    }, function(error) {
-                        console.error('Error: ', error);
-                        alert('Tyvärr kunde inte din OSA skickas. Försök igen senare.');
-                    });
-            } else {
-                console.error('EmailJS SDK is not loaded');
-                alert('Tyvärr kunde inte din OSA skickas. Försök igen senare.');
-            }
-        });
-    });
-</script>
 
 </body>
 </html>
