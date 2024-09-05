@@ -50,7 +50,7 @@
             margin: 40px 20px;
             max-width: 800px;
             width: 100%;
-            background-color: rgba(102, 51, 153, 0.5); /* Mörk violett med 50% opacitet */
+            background-color: rgba(102, 51, 153, 0.5);
             padding: 20px;
             border-radius: 10px;
             box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
@@ -74,7 +74,7 @@
         }
 
         .osa-form {
-            background-color: rgba(102, 51, 153, 0.5); /* Mörk violett med 50% opacitet */
+            background-color: rgba(102, 51, 153, 0.5);
             padding: 20px;
             border-radius: 10px;
             box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
@@ -116,6 +116,48 @@
 
         .osa-form button:hover {
             background-color: #45a049;
+        }
+
+        /* Anpassningar för mindre skärmar */
+        @media (max-width: 768px) {
+            header img {
+                width: 90%; /* Anpassa headerbildens bredd på mindre skärmar */
+            }
+
+            .text-section, .osa-form {
+                margin: 20px 10px; /* Minska marginalerna på mindre skärmar */
+                padding: 15px;
+            }
+
+            .osa-form button {
+                width: 100%;
+                padding: 15px; /* Ökad knappstorlek för mobil */
+            }
+
+            .osa-form input, .osa-form select, .osa-form textarea {
+                padding: 8px; /* Mindre fält för mobil */
+            }
+        }
+
+        @media (max-width: 480px) {
+            header img {
+                width: 100%; /* Anpassa headerbilden till full bredd */
+            }
+
+            .text-section, .osa-form {
+                margin: 15px 5px; /* Minska marginalerna ännu mer för små skärmar */
+                padding: 10px;
+            }
+
+            .osa-form button {
+                font-size: 14px; /* Anpassa knappstorleken */
+                padding: 12px;
+            }
+
+            .osa-form input, .osa-form select, .osa-form textarea {
+                font-size: 14px;
+                padding: 8px;
+            }
         }
     </style>
 </head>
