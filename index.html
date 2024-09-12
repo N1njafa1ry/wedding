@@ -23,8 +23,8 @@
         }
 
         .content video {
-            width: 100%; /* Videon täcker hela bredden */
-            height: auto; /* Höjden anpassas proportionellt */
+            width: 100%;
+            height: auto;
         }
 
         header {
@@ -42,12 +42,12 @@
         .text-section {
             margin: 40px 20px;
             max-width: 800px;
-            width: calc(100% - 40px); /* Lägger till en marginal på sidorna */
-            background-color: rgba(102, 51, 153, 0.5); /* Mörk violett med 50% opacitet */
+            width: calc(100% - 40px);
+            background-color: rgba(102, 51, 153, 0.5);
             padding: 20px;
             border-radius: 10px;
             box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
-            text-align: center; /* Centrerar texten */
+            text-align: center;
         }
 
         .text-with-image {
@@ -112,20 +112,48 @@
             background-color: #45a049;
         }
 
-        /* Anpassningar för mindre skärmar */
+        .language-switcher {
+            position: fixed;
+            top: 10px;
+            right: 20px;
+            z-index: 100;
+            display: flex;
+            gap: 10px;
+        }
+
+        .language-switcher button {
+            background-color: rgba(102, 51, 153, 0.5);
+            border: none;
+            color: white;
+            padding: 10px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 14px;
+            transition: background-color 0.3s ease;
+        }
+
+        .language-switcher button:hover {
+            background-color: #663399;
+        }
+
         @media (max-width: 768px) {
             .text-section, .osa-form {
-                margin: 20px 10px; /* Minska marginalerna på mindre skärmar */
+                margin: 20px 10px;
                 padding: 15px;
             }
 
             .osa-form button {
                 width: 100%;
-                padding: 15px; /* Ökad knappstorlek för mobil */
+                padding: 15px;
             }
 
             .osa-form input, .osa-form select, .osa-form textarea {
                 padding: 8px;
+            }
+
+            .language-switcher {
+                right: 10px;
+                top: 5px;
             }
         }
 
@@ -144,10 +172,26 @@
                 font-size: 14px;
                 padding: 8px;
             }
+
+            .language-switcher {
+                top: 5px;
+                right: 5px;
+            }
         }
     </style>
+    <script>
+        function switchLanguage(lang) {
+            document.querySelectorAll('.lang-sv').forEach(el => el.style.display = lang === 'sv' ? 'block' : 'none');
+            document.querySelectorAll('.lang-en').forEach(el => el.style.display = lang === 'en' ? 'block' : 'none');
+        }
+    </script>
 </head>
-<body>
+<body onload="switchLanguage('sv')">
+
+<div class="language-switcher">
+    <button onclick="switchLanguage('sv')">Svenska</button>
+    <button onclick="switchLanguage('en')">English</button>
+</div>
 
 <div class="content">
     <video controls autoplay loop muted playsinline>
@@ -160,14 +204,20 @@
     <img src="https://uploads.staticjw.com/au/aurorawedding/green-violett-white.png" alt="Bröllopslogotyp">
 </header>
 
-<!-- Vår Kärlekshistoria -->
-<div class="text-section">
+<!-- Kärlekshistoria (Swedish) -->
+<div class="text-section lang-sv">
     <h2>Vår Kärlekshistoria</h2>
     <p>Vi har visat varandra att magi existerar, och den 19 april 2025 är det vår tur att visa er. Vår resa tillsammans har varit fylld med kärlek, skratt och äventyr. Nu ser vi fram emot att dela denna magiska dag med våra närmaste och käraste. Välkommen att fira vår kärlek i hjärtat av Lappland, omgiven av naturens skönhet och under det dansande norrskenet.</p>
 </div>
 
-<!-- Plats och Boende -->
-<div class="text-section">
+<!-- Love Story (English) -->
+<div class="text-section lang-en" style="display:none;">
+    <h2>Our Love Story</h2>
+    <p>We have shown each other that magic exists, and on April 19, 2025, it is our turn to show you. Our journey together has been filled with love, laughter, and adventure. Now, we are looking forward to sharing this magical day with our closest and dearest. Welcome to celebrate our love in the heart of Lapland, surrounded by nature's beauty and under the dancing Northern Lights.</p>
+</div>
+
+<!-- Plats och Boende (Swedish) -->
+<div class="text-section lang-sv">
     <h2>Plats och Boende</h2>
     <p>Vårt bröllop kommer att äga rum på den fantastiska <a href="https://explorethenorth.se/our-lodges/lapland-view-lodge" target="_blank">Lapland View Lodge</a>, en pärla i Lappland med en spektakulär utsikt över den omgivande vildmarken.</p>
     <p>Vi är glada att kunna erbjuda er boende mellan den 19-20 april som en del av bröllopsfirandet. För er som önskar förlänga er vistelse, erbjuder Lapland View Lodge en rabatt på 15% om ni uppger våra namn "Älva & Rikard" vid bokning.</p>
@@ -180,19 +230,44 @@
     <p>Vi kommer att ordna upphämtning både från Luleå och Rovaniemi, så du behöver inte oroa dig för transporten till lodgen.</p>
 </div>
 
-<!-- Bröllopsprogram -->
-<div class="text-section">
+<!-- Venue and Accommodation (English) -->
+<div class="text-section lang-en" style="display:none;">
+    <h2>Venue and Accommodation</h2>
+    <p>Our wedding will take place at the stunning <a href="https://explorethenorth.se/our-lodges/lapland-view-lodge" target="_blank">Lapland View Lodge</a>, a gem in Lapland with spectacular views of the surrounding wilderness.</p>
+    <p>We are pleased to offer you accommodation between April 19-20 as part of the wedding celebration. For those who wish to extend their stay, Lapland View Lodge offers a 15% discount if you mention our names "Älva & Rikard" when booking.</p>
+    <h3>How to get there:</h3>
+    <ul>
+        <li><strong>International flights:</strong> If you are flying from abroad, it is easiest to fly to Rovaniemi, Finland.</li>
+        <li><strong>Domestic flights (Sweden):</strong> If you are flying within Sweden, it is best to fly to Luleå.</li>
+        <li><strong>Train:</strong> If you prefer the train, you can take it to Luleå.</li>
+    </ul>
+    <p>We will arrange pickups from both Luleå and Rovaniemi, so you don’t have to worry about transportation to the lodge.</p>
+</div>
+
+<!-- Bröllopsprogram (Swedish) -->
+<div class="text-section lang-sv">
     <h2>Bröllopsprogram</h2>
     <p>Vi arbetar för närvarande med att sätta ihop ett fantastiskt program för vår bröllopsdag. Vi kommer snart att uppdatera denna sida med detaljer, inklusive tider och aktiviteter. Håll utkik och se till att återkomma för mer information!</p>
 </div>
 
-<!-- Familjebild -->
-<div class="text-with-image">
+<!-- Wedding Program (English) -->
+<div class="text-section lang-en" style="display:none;">
+    <h2>Wedding Program</h2>
+    <p>We are currently working on putting together a fantastic program for our wedding day. We will soon update this page with details, including times and activities. Stay tuned and make sure to check back for more information!</p>
+</div>
+
+<!-- Familjebild (Swedish) -->
+<div class="text-with-image lang-sv">
     <img src="https://uploads.staticjw.com/au/aurorawedding/familjenjarn001.jpeg" alt="Familjebild">
 </div>
 
-<!-- OSA-formulär -->
-<div class="osa-form">
+<!-- Family Picture (English) -->
+<div class="text-with-image lang-en" style="display:none;">
+    <img src="https://uploads.staticjw.com/au/aurorawedding/familjenjarn001.jpeg" alt="Family Picture">
+</div>
+
+<!-- OSA-formulär (Swedish) -->
+<div class="osa-form lang-sv">
     <h2>OSA SENAST 10 DECEMBER</h2>
     <form action="https://formspree.io/f/xldrvbnv" method="POST">
         <label for="from_name">Ditt namn:</label>
@@ -220,6 +295,38 @@
         <textarea name="message" id="message" placeholder="Ditt meddelande (frivilligt)" rows="5"></textarea>
 
         <button type="submit">Skicka OSA</button>
+    </form>
+</div>
+
+<!-- RSVP Form (English) -->
+<div class="osa-form lang-en" style="display:none;">
+    <h2>RSVP BY DECEMBER 10</h2>
+    <form action="https://formspree.io/f/xldrvbnv" method="POST">
+        <label for="from_name">Your Name:</label>
+        <input type="text" name="from_name" id="from_name" placeholder="Your name" required>
+
+        <label for="email">Your Email:</label>
+        <input type="email" name="email" id="email" placeholder="Your email" required>
+
+        <label for="number_of_guests">How many will attend?</label>
+        <input type="number" name="number_of_guests" id="number_of_guests" placeholder="Number of adults" required>
+
+        <label for="number_of_children">If children, how many?</label>
+        <input type="number" name="number_of_children" id="number_of_children" placeholder="Number of children" required>
+
+        <label for="consent">Do you consent to appear on social media?</label>
+        <select name="consent" id="consent" required>
+            <option value="Yes">Yes, that's fine</option>
+            <option value="No">No, I prefer not</option>
+        </select>
+
+        <label for="allergies">Any allergies:</label>
+        <textarea name="allergies" id="allergies" placeholder="Describe any allergies" rows="2"></textarea>
+
+        <label for="message">Message:</label>
+        <textarea name="message" id="message" placeholder="Your message (optional)" rows="5"></textarea>
+
+        <button type="submit">Submit RSVP</button>
     </form>
 </div>
 
